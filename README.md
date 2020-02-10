@@ -1,6 +1,6 @@
 # DUExcelView
-This library fork from [SwiftyExcelView](https://github.com/AlasKuNull/SwiftyExcelView.git)，and update for Duapp
-This example project shows a way to show A Form like Excel in Swift.
+This library fork from [SwiftyExcelView](https://github.com/AlasKuNull/SwiftyExcelView.git)，and update for Duapp 
+The example project shows a way to show A Form like Excel in Swift.
 
 
 ## Installation
@@ -15,7 +15,8 @@ pod 'DUExcelView'
 ## Useage
 Drag DUExcelCollectionViewCell.swift , DUExcelDateManager.swift and DUExcelView.swift into your project.
 Demo shows detail how to use this.
-```
+
+```swift
         let excelView : DUExcelView = DUExcelView(frame: CGRect(x: 0, y: 20, width: DUScreenWidth, height: DUScreenHeight - 20))
         // 自动滚到最近的一列
         excelView.autoScrollToNearItem = true
