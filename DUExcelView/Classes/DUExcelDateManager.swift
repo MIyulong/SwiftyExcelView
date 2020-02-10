@@ -12,7 +12,7 @@ class AKExcelDataManager: NSObject {
     
     //MARK: - Properties
     /// excelView
-    var excelView : DUExcelView?
+    weak var excelView : DUExcelView?
     /// AllExcel Data
     var dataArray : [[String]]?
     /// freezeCollection Width
@@ -36,16 +36,28 @@ class AKExcelDataManager: NSObject {
     
     //MARK: - Private Method
     private func loadData() {
-        var arrM = [[String]]()
-        if let titles = excelView?.headerTitles {
-            arrM.append(titles)
-        }
-        if let datas = excelView?.contentData {
-            for model in datas {
-                arrM.append(model.valuesFor(excelView?.properties))
+        if var datas = excelView?.contentTexts, var titles = excelView?.headerTitles {
+            var arrM = [[String]]()
+            let c = (datas.first?.count ?? 0) - titles.count
+            // 检测到titles少于每行contentData个数时，则用空串补齐tiltes
+            if c > 0 {
+                for _ in 0..<c {
+                    titles.append("")
+                }
+                // 更新titles
+                excelView?.headerTitles = titles
+            } else if c < 0 {
+                // 则用空串补齐datas
+                var emptyStrs: [String] = []
+                for _ in 0..<abs(c) {
+                    emptyStrs.append("")
+                }
+                datas = datas.map { return $0 + emptyStrs }
             }
+            arrM.append(titles)
+            dataArray = arrM
+            dataArray! += datas
         }
-        dataArray = arrM
     }
     
     private func configData() {
@@ -117,6 +129,9 @@ class AKExcelDataManager: NSObject {
                 colW = max((excelView?.itemMinWidth)!, min((excelView?.itemMaxWidth)!, colW))
             }
             
+            // 滑动scroll节点
+            slideItemOffSetX.append(slideWidth)
+            
             if (i < (excelView?.leftFreezeColumn)!) {
                 fItemSize.append(NSCoder.string(for: CGSize.init(width: colW, height: (excelView?.itemHeight)! - 1)))
                 freezeWidth += colW
@@ -125,8 +140,7 @@ class AKExcelDataManager: NSObject {
                 sItemSize.append(NSCoder.string(for: CGSize.init(width: colW, height: (excelView?.itemHeight)! - 1)))
                 slideWidth += colW
             }
-            // 滑动scroll节点
-            slideItemOffSetX.append(slideWidth)
+            
         }
         freezeItemSize = fItemSize
         slideItemSize = sItemSize
@@ -147,37 +161,5 @@ extension String {
         let dic = NSDictionary(object: font, forKey: NSAttributedString.Key.font as NSCopying)
         let stringSize = self.boundingRect(with: size, options: .usesLineFragmentOrigin, attributes: dic as? [NSAttributedString.Key : Any] , context:nil).size
         return stringSize
-    }
-}
-
-extension NSObject {
-    func propertyNames() -> [String] {
-        return Mirror(reflecting: self).children.compactMap { $0.label }
-    }
-    
-    func valueFor(_ property:String) -> String? {
-        var value : String?
-        for case let (label?, anyValue) in Mirror(reflecting:self).children {
-            if label.isEqual(property) {
-                value = anyValue as? String
-            }
-        }
-        return value
-    }
-    
-    func valuesFor(_ properties:[String]?) -> [String] {
-        if let pros = properties {
-            var arrM = [String]()
-            for pro in pros {
-                arrM.append(valueFor(pro)!)
-            }
-            return arrM
-        }
-        
-        var values = [String]()
-        for case let (_?, anyValue) in Mirror(reflecting:self).children {
-            values.append(anyValue as? String ?? "")
-        }
-        return values
     }
 }

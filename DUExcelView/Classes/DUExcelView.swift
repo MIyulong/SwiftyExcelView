@@ -56,14 +56,12 @@ public class DUExcelView: UIView , UICollectionViewDelegate , UICollectionViewDa
     public var leftFreezeColumn: Int = 1
     /// header Titles
     public var headerTitles: Array<String>?
-    /// content Data
-    public var contentData: Array<NSObject>?
+    /// contnt data 二位数组字符串
+    public var contentTexts: Array<Array<String>>?
     /// set Column widths
     public var columnWidthSetting: Dictionary<Int, CGFloat>?
     /// CelledgeInset
     public var itemInsets: UIEdgeInsets?
-    /// showsProperties
-    public var properties: Array<String>?
     /// autoScrollItem default is false
     public var autoScrollToNearItem: Bool = false
     /// showNoDataView default is false
@@ -196,7 +194,7 @@ public class DUExcelView: UIView , UICollectionViewDelegate , UICollectionViewDa
             contentMoveableCollectionView.frame = CGRect.init(x: 0, y: 0, width: dataManager.slideWidth, height: height - headerHeight)
         }
         if showNoDataView {
-            self.alertLabel.isHidden = self.contentData?.count == 0 ? false: true
+            self.alertLabel.isHidden = self.dataManager.dataArray?.count == 0 ? false: true
         }
     }
     
@@ -225,8 +223,10 @@ extension DUExcelView {
     public func numberOfSections(in collectionView: UICollectionView) -> Int {
         if collectionView == headMovebleCollectionView || collectionView == headFreezeCollectionView {
             return 1
+        } else if let texts = contentTexts {
+            return texts.count
         }
-        return (contentData?.count)!
+        return 0
     }
     
     public func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -234,14 +234,13 @@ extension DUExcelView {
         if collectionView == headFreezeCollectionView || collectionView == contentFreezeCollectionView {
             return leftFreezeColumn
         } else {
-            if let firstBodyData = self.contentData?.first {
-                
-                if let pros = properties {
+             if let firstBodyData = self.contentTexts?.first {
+                if let pros = headerTitles {
                     return pros.count - leftFreezeColumn
                 }
-                let slideColumn = (firstBodyData.propertyNames().count) - leftFreezeColumn;
+                let slideColumn = (firstBodyData.count) - leftFreezeColumn;
                 return slideColumn
-            }else{
+            } else {
                 return 0
             }
         }

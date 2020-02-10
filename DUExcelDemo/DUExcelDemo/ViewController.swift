@@ -61,28 +61,27 @@ class ViewController: UIViewController , DUExcelViewDelegate {
         // 设置左侧冻结栏数
         excelView.leftFreezeColumn = 0
         // 设置对应模型里面的属性  按顺序
-        excelView.properties = ["productNo","productName","specification","quantity","note"]
+        //excelView.properties = ["productNo","productName","specification","quantity","note"]
         excelView.delegate = self
         // 指定列 设置 指定宽度  [column:width,...]
         excelView.columnWidthSetting = [3:180]
         excelView.itemHeight = 30
         excelView.headerHeight = 60
         excelView.showNoDataView = true
-        var arrM = [Model]()
+        var arrM = [[String]]()
         autoreleasepool {
             for i in 0 ..< 200 {
-                let model = Model()
-                model.productNo = String.init("货号 - \(i)")
-                model.productName = String.init("品名 - \(i)")
-                model.specification = String.init("规格  - \(i)")
-                model.quantity = String.init("数量 - \(i)")
-                model.note = String.init("说明说明说明说明说明说明说明说明 - \(i)")
-                model.pro = "others ..."
+                let str1 = String.init("货号 - \(i)")
+                let str2 = String.init("规格  - \(i)")
+                let str3 = String.init("品名 - \(i)")
+                let str4 = String.init("数量 - \(i)")
+                let str5 = String.init("说明说明说明说明说明说明说明说明 - \(i)")
+                let str6 = "others ..."
                 
-                arrM.append(model)
+                arrM.append([str1, str2, str3, str4, str5, str6])
             }
         }
-        excelView.contentData = arrM
+        excelView.contentTexts = arrM
         view.insertSubview(excelView, belowSubview: testButton!)
         
         //excelView.reloadData()

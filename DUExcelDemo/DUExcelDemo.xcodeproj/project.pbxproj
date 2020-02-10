@@ -13,7 +13,6 @@
 		4BDDB5901EDE71EB00B746C4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4BDDB58E1EDE71EB00B746C4 /* Main.storyboard */; };
 		4BDDB5921EDE71EB00B746C4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4BDDB5911EDE71EB00B746C4 /* Assets.xcassets */; };
 		4BDDB5951EDE71EB00B746C4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4BDDB5931EDE71EB00B746C4 /* LaunchScreen.storyboard */; };
-		4BDDB59D1EDE720400B746C4 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BDDB59C1EDE720400B746C4 /* Model.swift */; };
 		4BDDB5A61EDE9FB100B746C4 /* demo.gif in Resources */ = {isa = PBXBuildFile; fileRef = 4BDDB5A51EDE9FB100B746C4 /* demo.gif */; };
 		BE8676EE3141A0125614F7E3 /* Pods_DUExcelDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7BB3743999E4FC3AFFF4A0E1 /* Pods_DUExcelDemo.framework */; };
 /* End PBXBuildFile section */
@@ -27,7 +26,6 @@
 		4BDDB5911EDE71EB00B746C4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4BDDB5941EDE71EB00B746C4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4BDDB5961EDE71EB00B746C4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		4BDDB59C1EDE720400B746C4 /* Model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		4BDDB5A51EDE9FB100B746C4 /* demo.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = demo.gif; sourceTree = "<group>"; };
 		7BB3743999E4FC3AFFF4A0E1 /* Pods_DUExcelDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DUExcelDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B54F47865FB7361B96D3C0FF /* Pods-DUExcelDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DUExcelDemo.debug.xcconfig"; path = "Target Support Files/Pods-DUExcelDemo/Pods-DUExcelDemo.debug.xcconfig"; sourceTree = "<group>"; };
@@ -78,7 +76,6 @@
 			children = (
 				4BDDB58A1EDE71EB00B746C4 /* AppDelegate.swift */,
 				4BDDB58C1EDE71EB00B746C4 /* ViewController.swift */,
-				4BDDB59C1EDE720400B746C4 /* Model.swift */,
 				4BDDB58E1EDE71EB00B746C4 /* Main.storyboard */,
 				4BDDB5911EDE71EB00B746C4 /* Assets.xcassets */,
 				4BDDB5931EDE71EB00B746C4 /* LaunchScreen.storyboard */,
@@ -200,7 +197,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4BDDB59D1EDE720400B746C4 /* Model.swift in Sources */,
 				4BDDB58D1EDE71EB00B746C4 /* ViewController.swift in Sources */,
 				4BDDB58B1EDE71EB00B746C4 /* AppDelegate.swift in Sources */,
 			);
