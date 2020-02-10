@@ -105,43 +105,66 @@ class AKExcelDataManager: NSObject {
         
         let col = dataArray?.first?.count
         
-        for i in 0..<col! {
-            var colW = CGFloat()
-            for j in 0 ..< (dataArray?.count)! {
-                let value = dataArray?[j][i]
-                var size = value?.getTextSize(font: (excelView?.contentTextFontSize)!, size: CGSize.init(width: (excelView?.itemMaxWidth)!, height: (excelView?.itemHeight)!))
-                if j == 0 {
-                    size = value?.getTextSize(font: (excelView?.headerTextFontSize)!, size: CGSize.init(width: (excelView?.itemMaxWidth)!, height: (excelView?.itemHeight)!))
+        // 尝试分配
+        var totolColWidth: CGFloat = 0
+        var colWidths: [CGFloat] = []
+        dataArray?.first?.enumerated().forEach({ (i, value) in
+            var size = value.getTextSize(font: (excelView?.contentTextFontSize)!, size: CGSize.init(width: (excelView?.itemMaxWidth)!, height: (excelView?.itemHeight)!))
+            
+            if ((excelView?.columnWidthSetting) != nil) {
+                if let setWidth = excelView?.columnWidthSetting?[i] {
+                    size = CGSize.init(width: setWidth, height: (excelView?.itemHeight)!)
                 }
-                
-                if ((excelView?.columnWidthSetting) != nil) {
-                    if let setWidth = excelView?.columnWidthSetting?[i] {
-                        size = CGSize.init(width: setWidth, height: (excelView?.itemHeight)!)
-                    }
-                }
-                
-                let targetWidth = (size?.width)! + 2 * (excelView?.textMargin)!;
-                
-                if targetWidth >= colW {
-                    colW = targetWidth;
-                }
-                
-                colW = max((excelView?.itemMinWidth)!, min((excelView?.itemMaxWidth)!, colW))
             }
             
-            // 滑动scroll节点
-            slideItemOffSetX.append(slideWidth)
-            
-            if (i < (excelView?.leftFreezeColumn)!) {
-                fItemSize.append(NSCoder.string(for: CGSize.init(width: colW, height: (excelView?.itemHeight)! - 1)))
-                freezeWidth += colW
-                
-            } else {
-                sItemSize.append(NSCoder.string(for: CGSize.init(width: colW, height: (excelView?.itemHeight)! - 1)))
-                slideWidth += colW
-            }
-            
+            let targetWidth = size.width + 2 * (excelView?.textMargin)!;
+            let colW = max((excelView?.itemMinWidth)!, min((excelView?.itemMaxWidth)!, targetWidth))
+            colWidths.append(colW)
+            totolColWidth += colW
+        })
+        
+        if let containerW = excelView?.frame.width, totolColWidth < containerW {
+            // 取整，浮点数情况可能会出现异常
+            colWidths = colWidths.map { floor($0/totolColWidth*containerW) }
         }
+        
+        autoreleasepool {
+            for i in 0..<col! {
+                var colW = CGFloat()
+                for j in 0 ..< (dataArray?.count)! {
+                    let value = dataArray?[j][i]
+                    var size: CGSize? = .zero
+                    if j == 0 {
+                        size = value?.getTextSize(font: (excelView?.headerTextFontSize)!, size: CGSize.init(width: (excelView?.itemMaxWidth)!, height: (excelView?.itemHeight)!))
+                    } else {
+                        size = value?.getTextSize(font: (excelView?.contentTextFontSize)!, size: CGSize.init(width: (excelView?.itemMaxWidth)!, height: (excelView?.itemHeight)!))
+                    }
+                    
+                    let targetWidth = (size?.width)! + 2 * (excelView?.textMargin)!;
+                    if targetWidth >= colW {
+                        colW = targetWidth;
+                    }
+                    
+                    colW = max((excelView?.itemMinWidth)!, min((excelView?.itemMaxWidth)!, colW))
+                }
+                
+                if colWidths[i] >= colW {
+                    colW = colWidths[i];
+                }
+                // 滑动scroll节点
+                slideItemOffSetX.append(slideWidth)
+                
+                if (i < (excelView?.leftFreezeColumn)!) {
+                    fItemSize.append(NSCoder.string(for: CGSize.init(width: colW, height: (excelView?.itemHeight)! - 1)))
+                    freezeWidth += colW
+                    
+                } else {
+                    sItemSize.append(NSCoder.string(for: CGSize.init(width: colW, height: (excelView?.itemHeight)! - 1)))
+                    slideWidth += colW
+                }
+            }
+        }
+        
         freezeItemSize = fItemSize
         slideItemSize = sItemSize
     }
