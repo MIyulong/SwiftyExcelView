@@ -12,7 +12,7 @@ class AKExcelDataManager: NSObject {
     
     //MARK: - Properties
     /// excelView
-    var excelView : AKExcelView?
+    var excelView : DUExcelView?
     /// AllExcel Data
     var dataArray : [[String]]?
     /// freezeCollection Width

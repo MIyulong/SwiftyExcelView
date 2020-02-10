@@ -10,17 +10,17 @@ import UIKit
 let AKCollectionViewCellIdentifier = "AKCollectionView_Cell"
 let AKCollectionViewHeaderIdentifier = "AKCollectionView_Header"
 
-@objc protocol AKExcelViewDelegate: NSObjectProtocol {
+@objc protocol DUExcelViewDelegate: NSObjectProtocol {
     
-    @objc optional func excelView(_ excelView: AKExcelView, didSelectItemAt indexPath: IndexPath)
-    @objc optional func excelView(_ excelView: AKExcelView, viewAt indexPath: IndexPath) -> UIView?
-    @objc optional func excelView(_ excelView: AKExcelView, attributedStringAt indexPath: IndexPath) -> NSAttributedString?
+    @objc optional func excelView(_ excelView: DUExcelView, didSelectItemAt indexPath: IndexPath)
+    @objc optional func excelView(_ excelView: DUExcelView, viewAt indexPath: IndexPath) -> UIView?
+    @objc optional func excelView(_ excelView: DUExcelView, attributedStringAt indexPath: IndexPath) -> NSAttributedString?
 }
 
-class AKExcelView: UIView , UICollectionViewDelegate , UICollectionViewDataSource , UIScrollViewDelegate , UICollectionViewDelegateFlowLayout{
+class DUExcelView: UIView , UICollectionViewDelegate , UICollectionViewDataSource , UIScrollViewDelegate , UICollectionViewDelegateFlowLayout{
     
     /// Delegate
-    weak var delegate: AKExcelViewDelegate?
+    weak var delegate: DUExcelViewDelegate?
     /// CellTextMargin
     var textMargin: CGFloat = 5
     /// Cell Max width
@@ -220,7 +220,7 @@ class AKExcelView: UIView , UICollectionViewDelegate , UICollectionViewDataSourc
 }
 
 //MARK: - UICollectionView Delegate & DataSource & collectionPrivate
-extension AKExcelView {
+extension DUExcelView {
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         if collectionView == headMovebleCollectionView || collectionView == headFreezeCollectionView {
@@ -330,7 +330,7 @@ extension AKExcelView {
 }
 
 //MARK: - UISCrollViewDelegate
-extension AKExcelView {
+extension DUExcelView {
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         if scrollView != contentScrollView {
@@ -376,8 +376,8 @@ extension UICollectionView {
     }
 }
 
-//MARK: - AKExcelView Delegate Implemention
-extension AKExcelView {
+//MARK: - DUExcelView Delegate Implemention
+extension DUExcelView {
     
     fileprivate func customViewInCell(cell: AKExcelCollectionViewCell , indexPath: IndexPath) {
         let customView = delegate?.excelView?(self, viewAt: indexPath)

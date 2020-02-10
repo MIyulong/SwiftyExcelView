@@ -14,15 +14,15 @@
 		4BDDB5921EDE71EB00B746C4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4BDDB5911EDE71EB00B746C4 /* Assets.xcassets */; };
 		4BDDB5951EDE71EB00B746C4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4BDDB5931EDE71EB00B746C4 /* LaunchScreen.storyboard */; };
 		4BDDB59D1EDE720400B746C4 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BDDB59C1EDE720400B746C4 /* Model.swift */; };
-		4BDDB5A21EDE725F00B746C4 /* AKExcelCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BDDB59F1EDE725F00B746C4 /* AKExcelCollectionViewCell.swift */; };
-		4BDDB5A31EDE725F00B746C4 /* AKExcelDateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BDDB5A01EDE725F00B746C4 /* AKExcelDateManager.swift */; };
-		4BDDB5A41EDE725F00B746C4 /* AKExcelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BDDB5A11EDE725F00B746C4 /* AKExcelView.swift */; };
 		4BDDB5A61EDE9FB100B746C4 /* demo.gif in Resources */ = {isa = PBXBuildFile; fileRef = 4BDDB5A51EDE9FB100B746C4 /* demo.gif */; };
+		6DCDEDB723F17C0500ADAD11 /* DUExcelCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DCDEDB423F17C0400ADAD11 /* DUExcelCollectionViewCell.swift */; };
+		6DCDEDB823F17C0500ADAD11 /* DUExcelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DCDEDB523F17C0400ADAD11 /* DUExcelView.swift */; };
+		6DCDEDB923F17C0500ADAD11 /* DUExcelDateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DCDEDB623F17C0400ADAD11 /* DUExcelDateManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		4BBE51A51FE3ABAC000EDA57 /* 9.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = 9.gif; sourceTree = "<group>"; };
-		4BDDB5871EDE71EB00B746C4 /* AKExcelDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AKExcelDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4BDDB5871EDE71EB00B746C4 /* DUExcelDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DUExcelDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4BDDB58A1EDE71EB00B746C4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4BDDB58C1EDE71EB00B746C4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		4BDDB58F1EDE71EB00B746C4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -30,10 +30,10 @@
 		4BDDB5941EDE71EB00B746C4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4BDDB5961EDE71EB00B746C4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4BDDB59C1EDE720400B746C4 /* Model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
-		4BDDB59F1EDE725F00B746C4 /* AKExcelCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AKExcelCollectionViewCell.swift; sourceTree = "<group>"; };
-		4BDDB5A01EDE725F00B746C4 /* AKExcelDateManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AKExcelDateManager.swift; sourceTree = "<group>"; };
-		4BDDB5A11EDE725F00B746C4 /* AKExcelView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AKExcelView.swift; sourceTree = "<group>"; };
 		4BDDB5A51EDE9FB100B746C4 /* demo.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = demo.gif; sourceTree = "<group>"; };
+		6DCDEDB423F17C0400ADAD11 /* DUExcelCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DUExcelCollectionViewCell.swift; sourceTree = "<group>"; };
+		6DCDEDB523F17C0400ADAD11 /* DUExcelView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DUExcelView.swift; sourceTree = "<group>"; };
+		6DCDEDB623F17C0400ADAD11 /* DUExcelDateManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DUExcelDateManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -50,7 +50,7 @@
 		4BDDB57E1EDE71EB00B746C4 = {
 			isa = PBXGroup;
 			children = (
-				4BDDB5891EDE71EB00B746C4 /* AKExcelDemo */,
+				4BDDB5891EDE71EB00B746C4 /* DUExcelDemo */,
 				4BDDB5881EDE71EB00B746C4 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -58,15 +58,15 @@
 		4BDDB5881EDE71EB00B746C4 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				4BDDB5871EDE71EB00B746C4 /* AKExcelDemo.app */,
+				4BDDB5871EDE71EB00B746C4 /* DUExcelDemo.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		4BDDB5891EDE71EB00B746C4 /* AKExcelDemo */ = {
+		4BDDB5891EDE71EB00B746C4 /* DUExcelDemo */ = {
 			isa = PBXGroup;
 			children = (
-				4BDDB59E1EDE725300B746C4 /* AKExcelView */,
+				6DCDEDB323F17C0400ADAD11 /* DUExcelView */,
 				4BDDB58A1EDE71EB00B746C4 /* AppDelegate.swift */,
 				4BDDB58C1EDE71EB00B746C4 /* ViewController.swift */,
 				4BDDB59C1EDE720400B746C4 /* Model.swift */,
@@ -77,25 +77,25 @@
 				4BDDB5961EDE71EB00B746C4 /* Info.plist */,
 				4BBE51A51FE3ABAC000EDA57 /* 9.gif */,
 			);
-			path = AKExcelDemo;
+			path = DUExcelDemo;
 			sourceTree = "<group>";
 		};
-		4BDDB59E1EDE725300B746C4 /* AKExcelView */ = {
+		6DCDEDB323F17C0400ADAD11 /* DUExcelView */ = {
 			isa = PBXGroup;
 			children = (
-				4BDDB59F1EDE725F00B746C4 /* AKExcelCollectionViewCell.swift */,
-				4BDDB5A01EDE725F00B746C4 /* AKExcelDateManager.swift */,
-				4BDDB5A11EDE725F00B746C4 /* AKExcelView.swift */,
+				6DCDEDB423F17C0400ADAD11 /* DUExcelCollectionViewCell.swift */,
+				6DCDEDB523F17C0400ADAD11 /* DUExcelView.swift */,
+				6DCDEDB623F17C0400ADAD11 /* DUExcelDateManager.swift */,
 			);
-			path = AKExcelView;
+			path = DUExcelView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		4BDDB5861EDE71EB00B746C4 /* AKExcelDemo */ = {
+		4BDDB5861EDE71EB00B746C4 /* DUExcelDemo */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 4BDDB5991EDE71EB00B746C4 /* Build configuration list for PBXNativeTarget "AKExcelDemo" */;
+			buildConfigurationList = 4BDDB5991EDE71EB00B746C4 /* Build configuration list for PBXNativeTarget "DUExcelDemo" */;
 			buildPhases = (
 				4BDDB5831EDE71EB00B746C4 /* Sources */,
 				4BDDB5841EDE71EB00B746C4 /* Frameworks */,
@@ -105,9 +105,9 @@
 			);
 			dependencies = (
 			);
-			name = AKExcelDemo;
+			name = DUExcelDemo;
 			productName = AKExcelDemo;
-			productReference = 4BDDB5871EDE71EB00B746C4 /* AKExcelDemo.app */;
+			productReference = 4BDDB5871EDE71EB00B746C4 /* DUExcelDemo.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -128,7 +128,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 4BDDB5821EDE71EB00B746C4 /* Build configuration list for PBXProject "AKExcelDemo" */;
+			buildConfigurationList = 4BDDB5821EDE71EB00B746C4 /* Build configuration list for PBXProject "DUExcelDemo" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -142,7 +142,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				4BDDB5861EDE71EB00B746C4 /* AKExcelDemo */,
+				4BDDB5861EDE71EB00B746C4 /* DUExcelDemo */,
 			);
 		};
 /* End PBXProject section */
@@ -167,12 +167,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4BDDB5A41EDE725F00B746C4 /* AKExcelView.swift in Sources */,
+				6DCDEDB823F17C0500ADAD11 /* DUExcelView.swift in Sources */,
 				4BDDB59D1EDE720400B746C4 /* Model.swift in Sources */,
-				4BDDB5A31EDE725F00B746C4 /* AKExcelDateManager.swift in Sources */,
 				4BDDB58D1EDE71EB00B746C4 /* ViewController.swift in Sources */,
-				4BDDB5A21EDE725F00B746C4 /* AKExcelCollectionViewCell.swift in Sources */,
 				4BDDB58B1EDE71EB00B746C4 /* AppDelegate.swift in Sources */,
+				6DCDEDB923F17C0500ADAD11 /* DUExcelDateManager.swift in Sources */,
+				6DCDEDB723F17C0500ADAD11 /* DUExcelCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -310,9 +310,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 7GPZR297Z9;
-				INFOPLIST_FILE = AKExcelDemo/Info.plist;
+				INFOPLIST_FILE = DUExcelDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.alasku.AKExcelDemo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.alasku.DUExcelDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 4.0;
@@ -324,9 +324,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 7GPZR297Z9;
-				INFOPLIST_FILE = AKExcelDemo/Info.plist;
+				INFOPLIST_FILE = DUExcelDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.alasku.AKExcelDemo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.alasku.DUExcelDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 4.0;
@@ -336,7 +336,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		4BDDB5821EDE71EB00B746C4 /* Build configuration list for PBXProject "AKExcelDemo" */ = {
+		4BDDB5821EDE71EB00B746C4 /* Build configuration list for PBXProject "DUExcelDemo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				4BDDB5971EDE71EB00B746C4 /* Debug */,
@@ -345,7 +345,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		4BDDB5991EDE71EB00B746C4 /* Build configuration list for PBXNativeTarget "AKExcelDemo" */ = {
+		4BDDB5991EDE71EB00B746C4 /* Build configuration list for PBXNativeTarget "DUExcelDemo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				4BDDB59A1EDE71EB00B746C4 /* Debug */,

@@ -8,13 +8,13 @@
 
 import UIKit
 
-let AKScreenWidth = UIScreen.main.bounds.size.width
-let AKScreenHeight = UIScreen.main.bounds.size.height
+let DUScreenWidth = UIScreen.main.bounds.size.width
+let DUScreenHeight = UIScreen.main.bounds.size.height
 
 
-class ViewController: UIViewController , AKExcelViewDelegate {
+class ViewController: UIViewController , DUExcelViewDelegate {
 
-    var excelView : AKExcelView?
+    var excelView : DUExcelView?
     var testButton: UIButton?
     
     override func viewDidLoad() {
@@ -47,7 +47,7 @@ class ViewController: UIViewController , AKExcelViewDelegate {
     }
     
     func addExcelView() {
-        let excelView : AKExcelView = AKExcelView.init(frame: CGRect.init(x: 0, y: 20, width: AKScreenWidth, height: AKScreenHeight - 20))
+        let excelView : DUExcelView = DUExcelView.init(frame: CGRect.init(x: 0, y: 20, width: DUScreenWidth, height: DUScreenHeight - 20))
         // 自动滚到最近的一列
         excelView.autoScrollToNearItem = true
         // 设置表头背景色
@@ -94,11 +94,11 @@ class ViewController: UIViewController , AKExcelViewDelegate {
     }
 }
 
-//MARK: - AKExcelViewDelegate
+//MARK: - DUExcelViewDelegate
 
 extension UIViewController {
     // 代理方法 点击cell
-    @objc func excelView(_ excelView: AKExcelView, didSelectItemAt indexPath: IndexPath) {
+    @objc func excelView(_ excelView: DUExcelView, didSelectItemAt indexPath: IndexPath) {
         print("section: \(indexPath.section)  -  item: \(indexPath.item)")
         
         let alertVc = UIAlertController.init(title: "Title", message: "tap section: \(indexPath.section)  -  item: \(indexPath.item)", preferredStyle: .alert)
@@ -108,7 +108,7 @@ extension UIViewController {
     }
     
     // 自定义指定indepath的cell
-    @objc func excelView(_ excelView: AKExcelView, viewAt indexPath: IndexPath) -> UIView? {
+    @objc func excelView(_ excelView: DUExcelView, viewAt indexPath: IndexPath) -> UIView? {
         if indexPath.section == 5 && indexPath.row == 3 {
 
             let customView = UIView()
