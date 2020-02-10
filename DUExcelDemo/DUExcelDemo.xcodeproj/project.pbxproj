@@ -15,9 +15,7 @@
 		4BDDB5951EDE71EB00B746C4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4BDDB5931EDE71EB00B746C4 /* LaunchScreen.storyboard */; };
 		4BDDB59D1EDE720400B746C4 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BDDB59C1EDE720400B746C4 /* Model.swift */; };
 		4BDDB5A61EDE9FB100B746C4 /* demo.gif in Resources */ = {isa = PBXBuildFile; fileRef = 4BDDB5A51EDE9FB100B746C4 /* demo.gif */; };
-		6DCDEDB723F17C0500ADAD11 /* DUExcelCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DCDEDB423F17C0400ADAD11 /* DUExcelCollectionViewCell.swift */; };
-		6DCDEDB823F17C0500ADAD11 /* DUExcelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DCDEDB523F17C0400ADAD11 /* DUExcelView.swift */; };
-		6DCDEDB923F17C0500ADAD11 /* DUExcelDateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DCDEDB623F17C0400ADAD11 /* DUExcelDateManager.swift */; };
+		BE8676EE3141A0125614F7E3 /* Pods_DUExcelDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7BB3743999E4FC3AFFF4A0E1 /* Pods_DUExcelDemo.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,9 +29,9 @@
 		4BDDB5961EDE71EB00B746C4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4BDDB59C1EDE720400B746C4 /* Model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		4BDDB5A51EDE9FB100B746C4 /* demo.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = demo.gif; sourceTree = "<group>"; };
-		6DCDEDB423F17C0400ADAD11 /* DUExcelCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DUExcelCollectionViewCell.swift; sourceTree = "<group>"; };
-		6DCDEDB523F17C0400ADAD11 /* DUExcelView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DUExcelView.swift; sourceTree = "<group>"; };
-		6DCDEDB623F17C0400ADAD11 /* DUExcelDateManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DUExcelDateManager.swift; sourceTree = "<group>"; };
+		7BB3743999E4FC3AFFF4A0E1 /* Pods_DUExcelDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DUExcelDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B54F47865FB7361B96D3C0FF /* Pods-DUExcelDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DUExcelDemo.debug.xcconfig"; path = "Target Support Files/Pods-DUExcelDemo/Pods-DUExcelDemo.debug.xcconfig"; sourceTree = "<group>"; };
+		CD7DE28150A1A3384BA271CF /* Pods-DUExcelDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DUExcelDemo.release.xcconfig"; path = "Target Support Files/Pods-DUExcelDemo/Pods-DUExcelDemo.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -41,17 +39,30 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BE8676EE3141A0125614F7E3 /* Pods_DUExcelDemo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		461F7B6113ABEEFB4FA33D40 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B54F47865FB7361B96D3C0FF /* Pods-DUExcelDemo.debug.xcconfig */,
+				CD7DE28150A1A3384BA271CF /* Pods-DUExcelDemo.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		4BDDB57E1EDE71EB00B746C4 = {
 			isa = PBXGroup;
 			children = (
 				4BDDB5891EDE71EB00B746C4 /* DUExcelDemo */,
 				4BDDB5881EDE71EB00B746C4 /* Products */,
+				461F7B6113ABEEFB4FA33D40 /* Pods */,
+				A05EC60C22B41A12DD764FDB /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -66,7 +77,6 @@
 		4BDDB5891EDE71EB00B746C4 /* DUExcelDemo */ = {
 			isa = PBXGroup;
 			children = (
-				6DCDEDB323F17C0400ADAD11 /* DUExcelView */,
 				4BDDB58A1EDE71EB00B746C4 /* AppDelegate.swift */,
 				4BDDB58C1EDE71EB00B746C4 /* ViewController.swift */,
 				4BDDB59C1EDE720400B746C4 /* Model.swift */,
@@ -80,14 +90,12 @@
 			path = DUExcelDemo;
 			sourceTree = "<group>";
 		};
-		6DCDEDB323F17C0400ADAD11 /* DUExcelView */ = {
+		A05EC60C22B41A12DD764FDB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				6DCDEDB423F17C0400ADAD11 /* DUExcelCollectionViewCell.swift */,
-				6DCDEDB523F17C0400ADAD11 /* DUExcelView.swift */,
-				6DCDEDB623F17C0400ADAD11 /* DUExcelDateManager.swift */,
+				7BB3743999E4FC3AFFF4A0E1 /* Pods_DUExcelDemo.framework */,
 			);
-			path = DUExcelView;
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -97,6 +105,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4BDDB5991EDE71EB00B746C4 /* Build configuration list for PBXNativeTarget "DUExcelDemo" */;
 			buildPhases = (
+				4B3FB84F4D39CBB5C69D76F3 /* [CP] Check Pods Manifest.lock */,
 				4BDDB5831EDE71EB00B746C4 /* Sources */,
 				4BDDB5841EDE71EB00B746C4 /* Frameworks */,
 				4BDDB5851EDE71EB00B746C4 /* Resources */,
@@ -162,17 +171,39 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		4B3FB84F4D39CBB5C69D76F3 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-DUExcelDemo-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		4BDDB5831EDE71EB00B746C4 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6DCDEDB823F17C0500ADAD11 /* DUExcelView.swift in Sources */,
 				4BDDB59D1EDE720400B746C4 /* Model.swift in Sources */,
 				4BDDB58D1EDE71EB00B746C4 /* ViewController.swift in Sources */,
 				4BDDB58B1EDE71EB00B746C4 /* AppDelegate.swift in Sources */,
-				6DCDEDB923F17C0500ADAD11 /* DUExcelDateManager.swift in Sources */,
-				6DCDEDB723F17C0500ADAD11 /* DUExcelCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -307,6 +338,7 @@
 		};
 		4BDDB59A1EDE71EB00B746C4 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B54F47865FB7361B96D3C0FF /* Pods-DUExcelDemo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 7GPZR297Z9;
@@ -321,6 +353,7 @@
 		};
 		4BDDB59B1EDE71EB00B746C4 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CD7DE28150A1A3384BA271CF /* Pods-DUExcelDemo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 7GPZR297Z9;

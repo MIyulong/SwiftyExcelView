@@ -1,0 +1,6 @@
+framework module DUExcelView {
+  umbrella header "DUExcelView-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -1,0 +1,612 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		04265D34A3CDABD7F2B171FDE5EE84D6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
+		14DDC06B80DD8DB1AC4AB833EBD60ED2 /* DUExcelCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD1A91EED54BF591FD5F0771B7B7D763 /* DUExcelCollectionViewCell.swift */; };
+		4067297A96A848C90B6ADAE8FBB31FD8 /* DUExcelDateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66C4F5254A1CFA24B02DB45492EC3AAA /* DUExcelDateManager.swift */; };
+		4D7E56DBF31FC6CF38F425158F399013 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
+		5079663D77C723A30B7FCD89A6BC4BCF /* Pods-DUExcelDemo-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 540EA9DBA70BA86B2F216E5391B52BA6 /* Pods-DUExcelDemo-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		74C42D8ACBB3504D9CDC580F73CEE893 /* DUExcelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A26F7EDAF25FDDA019E04177AFC6A19 /* DUExcelView.swift */; };
+		DCA9FBE588DDF4A01F275678C5AA20E7 /* DUExcelView-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 18E4AB2156BD39E65D23236551C9034D /* DUExcelView-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E20B75B0762A56DA4738804D81A53A53 /* Pods-DUExcelDemo-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 936733FB81EEF68EE31EBDDA0803C2FF /* Pods-DUExcelDemo-dummy.m */; };
+		F5672E3F063967530C0041CB940DB095 /* DUExcelView-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 416BA3D5C83B85041206E3A6532468DE /* DUExcelView-dummy.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		CB8A1AA44778574760D2FC7304A06367 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 84A087CDC2C3F4577EF721A1EF2C4281;
+			remoteInfo = DUExcelView;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		08236D644955D78EEF5CFBA9EEBEFC64 /* Pods-DUExcelDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-DUExcelDemo.debug.xcconfig"; sourceTree = "<group>"; };
+		0A26F7EDAF25FDDA019E04177AFC6A19 /* DUExcelView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DUExcelView.swift; path = DUExcelView/Classes/DUExcelView.swift; sourceTree = "<group>"; };
+		18E4AB2156BD39E65D23236551C9034D /* DUExcelView-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "DUExcelView-umbrella.h"; sourceTree = "<group>"; };
+		1B7A9EED13BD0C7202B5955D7CBB0DC2 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
+		2BD449C664315ED94A158A6A3BF9D4BE /* Pods-DUExcelDemo-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-DUExcelDemo-Info.plist"; sourceTree = "<group>"; };
+		3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		343EE13D5CC100B1E300AC107CABF57F /* DUExcelView.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = DUExcelView.modulemap; sourceTree = "<group>"; };
+		416BA3D5C83B85041206E3A6532468DE /* DUExcelView-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "DUExcelView-dummy.m"; sourceTree = "<group>"; };
+		462D1C58A8654A94C1734788E0CEC5CD /* DUExcelView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = DUExcelView.framework; path = DUExcelView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4C15F77784292ED750CD164B3A9C857E /* Pods-DUExcelDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-DUExcelDemo.release.xcconfig"; sourceTree = "<group>"; };
+		540EA9DBA70BA86B2F216E5391B52BA6 /* Pods-DUExcelDemo-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-DUExcelDemo-umbrella.h"; sourceTree = "<group>"; };
+		5695D0318AA479D39253937475628E27 /* Pods-DUExcelDemo-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-DUExcelDemo-acknowledgements.plist"; sourceTree = "<group>"; };
+		569E73FEC8B086E116435A4BD1C53C40 /* DUExcelView.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = DUExcelView.xcconfig; sourceTree = "<group>"; };
+		58C2BD744C639DEC6EC080C8A1474030 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
+		5A892FD705801E9A893F00ED6425E3DA /* Pods-DUExcelDemo.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-DUExcelDemo.modulemap"; sourceTree = "<group>"; };
+		66C4F5254A1CFA24B02DB45492EC3AAA /* DUExcelDateManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DUExcelDateManager.swift; path = DUExcelView/Classes/DUExcelDateManager.swift; sourceTree = "<group>"; };
+		822BCC33BAEA88BED38F5FF4810738A1 /* Pods-DUExcelDemo-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-DUExcelDemo-acknowledgements.markdown"; sourceTree = "<group>"; };
+		936733FB81EEF68EE31EBDDA0803C2FF /* Pods-DUExcelDemo-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-DUExcelDemo-dummy.m"; sourceTree = "<group>"; };
+		9B1D37A54549CF66B3F843374D85F172 /* DUExcelView.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = DUExcelView.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		BBC5FE5B9350BC78454D4D0913FA95DD /* DUExcelView-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "DUExcelView-prefix.pch"; sourceTree = "<group>"; };
+		CD1A91EED54BF591FD5F0771B7B7D763 /* DUExcelCollectionViewCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DUExcelCollectionViewCell.swift; path = DUExcelView/Classes/DUExcelCollectionViewCell.swift; sourceTree = "<group>"; };
+		F7B5219F29E5915135765360438EBFB2 /* Pods_DUExcelDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_DUExcelDemo.framework; path = "Pods-DUExcelDemo.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		FC288983483D78EB1B02D0BB1984ED8E /* DUExcelView-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "DUExcelView-Info.plist"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		153DC109DECD9495167EF9ADB23F2C17 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4D7E56DBF31FC6CF38F425158F399013 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		80F4A8A336ECD3C97AACBE69E8F474E1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				04265D34A3CDABD7F2B171FDE5EE84D6 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		113947A41A317496C1056F1EF9D610DB /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				DA5DB295001B5FB80B961C76892CE724 /* Pods-DUExcelDemo */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		561A827D52F70E5456A63AC455A5502B /* Development Pods */ = {
+			isa = PBXGroup;
+			children = (
+				DFADCCEF7B9E8A05D325B4DFAACEBE34 /* DUExcelView */,
+			);
+			name = "Development Pods";
+			sourceTree = "<group>";
+		};
+		AA6057CFDF002BE91A9115E736E2602A /* Pod */ = {
+			isa = PBXGroup;
+			children = (
+				9B1D37A54549CF66B3F843374D85F172 /* DUExcelView.podspec */,
+				58C2BD744C639DEC6EC080C8A1474030 /* LICENSE */,
+				1B7A9EED13BD0C7202B5955D7CBB0DC2 /* README.md */,
+			);
+			name = Pod;
+			sourceTree = "<group>";
+		};
+		C0834CEBB1379A84116EF29F93051C60 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		CF1408CF629C7361332E53B88F7BD30C = {
+			isa = PBXGroup;
+			children = (
+				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
+				561A827D52F70E5456A63AC455A5502B /* Development Pods */,
+				D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */,
+				E484830068CE59280A6B00886A2B1B9C /* Products */,
+				113947A41A317496C1056F1EF9D610DB /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C0834CEBB1379A84116EF29F93051C60 /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D26C541E7D881CAFEAB5555B9EB8B0A9 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				343EE13D5CC100B1E300AC107CABF57F /* DUExcelView.modulemap */,
+				569E73FEC8B086E116435A4BD1C53C40 /* DUExcelView.xcconfig */,
+				416BA3D5C83B85041206E3A6532468DE /* DUExcelView-dummy.m */,
+				FC288983483D78EB1B02D0BB1984ED8E /* DUExcelView-Info.plist */,
+				BBC5FE5B9350BC78454D4D0913FA95DD /* DUExcelView-prefix.pch */,
+				18E4AB2156BD39E65D23236551C9034D /* DUExcelView-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "DUExcelDemo/Pods/Target Support Files/DUExcelView";
+			sourceTree = "<group>";
+		};
+		DA5DB295001B5FB80B961C76892CE724 /* Pods-DUExcelDemo */ = {
+			isa = PBXGroup;
+			children = (
+				5A892FD705801E9A893F00ED6425E3DA /* Pods-DUExcelDemo.modulemap */,
+				822BCC33BAEA88BED38F5FF4810738A1 /* Pods-DUExcelDemo-acknowledgements.markdown */,
+				5695D0318AA479D39253937475628E27 /* Pods-DUExcelDemo-acknowledgements.plist */,
+				936733FB81EEF68EE31EBDDA0803C2FF /* Pods-DUExcelDemo-dummy.m */,
+				2BD449C664315ED94A158A6A3BF9D4BE /* Pods-DUExcelDemo-Info.plist */,
+				540EA9DBA70BA86B2F216E5391B52BA6 /* Pods-DUExcelDemo-umbrella.h */,
+				08236D644955D78EEF5CFBA9EEBEFC64 /* Pods-DUExcelDemo.debug.xcconfig */,
+				4C15F77784292ED750CD164B3A9C857E /* Pods-DUExcelDemo.release.xcconfig */,
+			);
+			name = "Pods-DUExcelDemo";
+			path = "Target Support Files/Pods-DUExcelDemo";
+			sourceTree = "<group>";
+		};
+		DFADCCEF7B9E8A05D325B4DFAACEBE34 /* DUExcelView */ = {
+			isa = PBXGroup;
+			children = (
+				CD1A91EED54BF591FD5F0771B7B7D763 /* DUExcelCollectionViewCell.swift */,
+				66C4F5254A1CFA24B02DB45492EC3AAA /* DUExcelDateManager.swift */,
+				0A26F7EDAF25FDDA019E04177AFC6A19 /* DUExcelView.swift */,
+				AA6057CFDF002BE91A9115E736E2602A /* Pod */,
+				D26C541E7D881CAFEAB5555B9EB8B0A9 /* Support Files */,
+			);
+			name = DUExcelView;
+			path = ../..;
+			sourceTree = "<group>";
+		};
+		E484830068CE59280A6B00886A2B1B9C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				462D1C58A8654A94C1734788E0CEC5CD /* DUExcelView.framework */,
+				F7B5219F29E5915135765360438EBFB2 /* Pods_DUExcelDemo.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		5575152F03D705D8C9F77DC2C449D84F /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5079663D77C723A30B7FCD89A6BC4BCF /* Pods-DUExcelDemo-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A013C7405FD48D43A444D67F6930909E /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DCA9FBE588DDF4A01F275678C5AA20E7 /* DUExcelView-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		84A087CDC2C3F4577EF721A1EF2C4281 /* DUExcelView */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4CAB5041E5E051999FA04A510C74F40D /* Build configuration list for PBXNativeTarget "DUExcelView" */;
+			buildPhases = (
+				A013C7405FD48D43A444D67F6930909E /* Headers */,
+				27ADC4187B2B5F9CC6C568E508359F3A /* Sources */,
+				80F4A8A336ECD3C97AACBE69E8F474E1 /* Frameworks */,
+				22C13A16488A1FCCF1AA410073A07854 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = DUExcelView;
+			productName = DUExcelView;
+			productReference = 462D1C58A8654A94C1734788E0CEC5CD /* DUExcelView.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		D70BEC74A908E71BDDCEC1E0B1AF62B7 /* Pods-DUExcelDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 18D8E94C1CD4A2903D5A074D0F7C35FA /* Build configuration list for PBXNativeTarget "Pods-DUExcelDemo" */;
+			buildPhases = (
+				5575152F03D705D8C9F77DC2C449D84F /* Headers */,
+				1287FFB2B80D1D926E6692B12093C4A4 /* Sources */,
+				153DC109DECD9495167EF9ADB23F2C17 /* Frameworks */,
+				797296397EB54BE5DF1D32C7575FF4B9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BDDAE1AC87F319E2FF2D0B09E08C3631 /* PBXTargetDependency */,
+			);
+			name = "Pods-DUExcelDemo";
+			productName = "Pods-DUExcelDemo";
+			productReference = F7B5219F29E5915135765360438EBFB2 /* Pods_DUExcelDemo.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BFDFE7DC352907FC980B868725387E98 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1100;
+				LastUpgradeCheck = 1100;
+			};
+			buildConfigurationList = 4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
+			productRefGroup = E484830068CE59280A6B00886A2B1B9C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				84A087CDC2C3F4577EF721A1EF2C4281 /* DUExcelView */,
+				D70BEC74A908E71BDDCEC1E0B1AF62B7 /* Pods-DUExcelDemo */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		22C13A16488A1FCCF1AA410073A07854 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		797296397EB54BE5DF1D32C7575FF4B9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1287FFB2B80D1D926E6692B12093C4A4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E20B75B0762A56DA4738804D81A53A53 /* Pods-DUExcelDemo-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		27ADC4187B2B5F9CC6C568E508359F3A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				14DDC06B80DD8DB1AC4AB833EBD60ED2 /* DUExcelCollectionViewCell.swift in Sources */,
+				4067297A96A848C90B6ADAE8FBB31FD8 /* DUExcelDateManager.swift in Sources */,
+				F5672E3F063967530C0041CB940DB095 /* DUExcelView-dummy.m in Sources */,
+				74C42D8ACBB3504D9CDC580F73CEE893 /* DUExcelView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		BDDAE1AC87F319E2FF2D0B09E08C3631 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = DUExcelView;
+			target = 84A087CDC2C3F4577EF721A1EF2C4281 /* DUExcelView */;
+			targetProxy = CB8A1AA44778574760D2FC7304A06367 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		142DA3047F1346915680C982DE51A27F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 08236D644955D78EEF5CFBA9EEBEFC64 /* Pods-DUExcelDemo.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-DUExcelDemo/Pods-DUExcelDemo-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-DUExcelDemo/Pods-DUExcelDemo.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		2F5CE9157A6944C572608740FA41A6A5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		69DF59F5D96FDAD234A6EA205E67AC5F /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 569E73FEC8B086E116435A4BD1C53C40 /* DUExcelView.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/DUExcelView/DUExcelView-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/DUExcelView/DUExcelView-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/DUExcelView/DUExcelView.modulemap";
+				PRODUCT_MODULE_NAME = DUExcelView;
+				PRODUCT_NAME = DUExcelView;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		889356A2686E58A57E98DD0B027537B6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 569E73FEC8B086E116435A4BD1C53C40 /* DUExcelView.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/DUExcelView/DUExcelView-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/DUExcelView/DUExcelView-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/DUExcelView/DUExcelView.modulemap";
+				PRODUCT_MODULE_NAME = DUExcelView;
+				PRODUCT_NAME = DUExcelView;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		9C1E2AE12BB0E52D7E2AFEACA9281917 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4C15F77784292ED750CD164B3A9C857E /* Pods-DUExcelDemo.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-DUExcelDemo/Pods-DUExcelDemo-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-DUExcelDemo/Pods-DUExcelDemo.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		B102853BB3392A16E68667C38114BC6A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		18D8E94C1CD4A2903D5A074D0F7C35FA /* Build configuration list for PBXNativeTarget "Pods-DUExcelDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				142DA3047F1346915680C982DE51A27F /* Debug */,
+				9C1E2AE12BB0E52D7E2AFEACA9281917 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2F5CE9157A6944C572608740FA41A6A5 /* Debug */,
+				B102853BB3392A16E68667C38114BC6A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4CAB5041E5E051999FA04A510C74F40D /* Build configuration list for PBXNativeTarget "DUExcelView" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				889356A2686E58A57E98DD0B027537B6 /* Debug */,
+				69DF59F5D96FDAD234A6EA205E67AC5F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+}

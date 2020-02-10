@@ -1,0 +1,25 @@
+{
+  "name": "DUExcelView",
+  "version": "0.0.1",
+  "summary": "excel视图样式、支持头部与做左边固定",
+  "description": "excel视图样式、支持自定义头部与做左边固定，cell样式自定义",
+  "homepage": "https://pkg.poizon.com/duapp/iOS/duexcelview.git",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "yulong": "617352010@qq.com"
+  },
+  "source": {
+    "git": "git@pkg.poizon.com:duapp/iOS/duexcelview.git",
+    "tag": "0.0.1"
+  },
+  "platforms": {
+    "ios": "10.3"
+  },
+  "swift_versions": "5.0",
+  "source_files": "DUExcelView/Classes/**/*",
+  "static_framework": true,
+  "swift_version": "5.0"
+}

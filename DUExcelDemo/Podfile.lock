@@ -1,0 +1,16 @@
+PODS:
+  - DUExcelView (0.0.1)
+
+DEPENDENCIES:
+  - DUExcelView (from `../`)
+
+EXTERNAL SOURCES:
+  DUExcelView:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  DUExcelView: 2000913c8e7132d56ed329265caf63b02901fdc6
+
+PODFILE CHECKSUM: 23aae6f286e6870f28bba2cb76b9fab4fb193677
+
+COCOAPODS: 1.8.4

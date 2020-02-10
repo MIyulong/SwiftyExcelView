@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import DUExcelView
 
 let DUScreenWidth = UIScreen.main.bounds.size.width
 let DUScreenHeight = UIScreen.main.bounds.size.height
@@ -47,7 +48,8 @@ class ViewController: UIViewController , DUExcelViewDelegate {
     }
     
     func addExcelView() {
-        let excelView : DUExcelView = DUExcelView.init(frame: CGRect.init(x: 0, y: 20, width: DUScreenWidth, height: DUScreenHeight - 20))
+        
+        let excelView : DUExcelView = DUExcelView(frame: CGRect(x: 0, y: 20, width: DUScreenWidth, height: DUScreenHeight - 20))
         // 自动滚到最近的一列
         excelView.autoScrollToNearItem = true
         // 设置表头背景色
@@ -62,7 +64,7 @@ class ViewController: UIViewController , DUExcelViewDelegate {
         excelView.properties = ["productNo","productName","specification","quantity","note"]
         excelView.delegate = self
         // 指定列 设置 指定宽度  [column:width,...]
-//        excelView.columnWidthSetting = [3:180]
+        excelView.columnWidthSetting = [3:180]
         excelView.itemHeight = 30
         excelView.headerHeight = 60
         excelView.showNoDataView = true

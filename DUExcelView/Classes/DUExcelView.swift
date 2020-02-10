@@ -10,64 +10,64 @@ import UIKit
 let AKCollectionViewCellIdentifier = "AKCollectionView_Cell"
 let AKCollectionViewHeaderIdentifier = "AKCollectionView_Header"
 
-@objc protocol DUExcelViewDelegate: NSObjectProtocol {
+@objc public protocol DUExcelViewDelegate: NSObjectProtocol {
     
     @objc optional func excelView(_ excelView: DUExcelView, didSelectItemAt indexPath: IndexPath)
     @objc optional func excelView(_ excelView: DUExcelView, viewAt indexPath: IndexPath) -> UIView?
     @objc optional func excelView(_ excelView: DUExcelView, attributedStringAt indexPath: IndexPath) -> NSAttributedString?
 }
 
-class DUExcelView: UIView , UICollectionViewDelegate , UICollectionViewDataSource , UIScrollViewDelegate , UICollectionViewDelegateFlowLayout{
+public class DUExcelView: UIView , UICollectionViewDelegate , UICollectionViewDataSource , UIScrollViewDelegate , UICollectionViewDelegateFlowLayout{
     
     /// Delegate
-    weak var delegate: DUExcelViewDelegate?
+    public weak var delegate: DUExcelViewDelegate?
     /// CellTextMargin
-    var textMargin: CGFloat = 5
+    public var textMargin: CGFloat = 5
     /// Cell Max width
-    var itemMaxWidth: CGFloat = 200
+    public var itemMaxWidth: CGFloat = 200
     /// cell Min width
-    var itemMinWidth: CGFloat = 50
+    public var itemMinWidth: CGFloat = 50
     /// cell heihth
-    var itemHeight: CGFloat = 44
+    public var itemHeight: CGFloat = 44
     /// header Height
-    var headerHeight: CGFloat = 44
+    public var headerHeight: CGFloat = 44
     /// header BackgroundColor
-    var headerBackgroundColor: UIColor = UIColor.lightGray
+    public var headerBackgroundColor: UIColor = UIColor.lightGray
     /// header Text Color
-    var headerTextColor: UIColor = UIColor.black
+    public var headerTextColor: UIColor = UIColor.black
     /// header Text Font
-    var headerTextFontSize: UIFont = UIFont.systemFont(ofSize: 15)
+    public var headerTextFontSize: UIFont = UIFont.systemFont(ofSize: 15)
     /// contenTCell TextColor
-    var contentTextColor: UIColor = UIColor.black
+    public var contentTextColor: UIColor = UIColor.black
     /// 奇数行背景颜色
-    var oddLineBackgroundColor: UIColor = UIColor(red: 245/255.0, green: 245/255.0, blue: 249/255.0, alpha: 1)
+    public var oddLineBackgroundColor: UIColor = UIColor(red: 245/255.0, green: 245/255.0, blue: 249/255.0, alpha: 1)
     /// 偶数行背景颜色
-    var evenLineBackgroundColor: UIColor = UIColor.white
+    public var evenLineBackgroundColor: UIColor = UIColor.white
     /// content backgroung Color, 设置内容背景颜色后，会自动同步奇偶行背景
-    var contentBackgroundColor: UIColor = UIColor.black {
+    public var contentBackgroundColor: UIColor = UIColor.black {
         didSet {
             oddLineBackgroundColor = contentBackgroundColor
             evenLineBackgroundColor = contentBackgroundColor
         }
     }
     /// content Text Font
-    var contentTextFontSize: UIFont = UIFont.systemFont(ofSize: 13)
+    public var contentTextFontSize: UIFont = UIFont.systemFont(ofSize: 13)
     /// letf freeze column
-    var leftFreezeColumn: Int = 1
+    public var leftFreezeColumn: Int = 1
     /// header Titles
-    var headerTitles: Array<String>?
+    public var headerTitles: Array<String>?
     /// content Data
-    var contentData: Array<NSObject>?
+    public var contentData: Array<NSObject>?
     /// set Column widths
-    var columnWidthSetting: Dictionary<Int, CGFloat>?
+    public var columnWidthSetting: Dictionary<Int, CGFloat>?
     /// CelledgeInset
-    var itemInsets: UIEdgeInsets?
+    public var itemInsets: UIEdgeInsets?
     /// showsProperties
-    var properties: Array<String>?
+    public var properties: Array<String>?
     /// autoScrollItem default is false
-    var autoScrollToNearItem: Bool = false
+    public var autoScrollToNearItem: Bool = false
     /// showNoDataView default is false
-    var showNoDataView: Bool = false {
+    public var showNoDataView: Bool = false {
         didSet{
             self.addSubview(alertLabel)
             alertLabel.center = self.center
@@ -96,7 +96,7 @@ class DUExcelView: UIView , UICollectionViewDelegate , UICollectionViewDataSourc
     }()
     
     //MARK: - Public Method
-    override init(frame: CGRect) {
+    override public init(frame: CGRect) {
         super.init(frame: frame)
         setup()
     }
@@ -105,16 +105,16 @@ class DUExcelView: UIView , UICollectionViewDelegate , UICollectionViewDataSourc
         fatalError("init(coder:) has not been implemented")
     }
     
-    override func layoutSubviews() {
+    override public func layoutSubviews() {
         super.layoutSubviews()
         setUpFrames()
     }
     
-    func reloadData() {
+    public func reloadData() {
         reloadDataCompleteHandler()
     }
     
-    func reloadDataCompleteHandler(complete:(() -> Void)? = nil) {
+    public func reloadDataCompleteHandler(complete:(() -> Void)? = nil) {
         DispatchQueue.global().async {
             self.dataManager.caculateData()
             DispatchQueue.main.async {
@@ -222,14 +222,14 @@ class DUExcelView: UIView , UICollectionViewDelegate , UICollectionViewDataSourc
 //MARK: - UICollectionView Delegate & DataSource & collectionPrivate
 extension DUExcelView {
     
-    func numberOfSections(in collectionView: UICollectionView) -> Int {
+    public func numberOfSections(in collectionView: UICollectionView) -> Int {
         if collectionView == headMovebleCollectionView || collectionView == headFreezeCollectionView {
             return 1
         }
         return (contentData?.count)!
     }
     
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    public func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
         if collectionView == headFreezeCollectionView || collectionView == contentFreezeCollectionView {
             return leftFreezeColumn
@@ -247,7 +247,7 @@ extension DUExcelView {
         }
     }
     
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+    public func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: AKCollectionViewCellIdentifier, for: indexPath) as! AKExcelCollectionViewCell
         cell.horizontalMargin = self.textMargin
         self.configCells(collectionView: collectionView, cell: cell, indexPath: indexPath)
@@ -291,7 +291,7 @@ extension DUExcelView {
         attributeStringInCell(cell: cell, indexPath: targetIndexPath)
     }
     
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+    public func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         if collectionView == headFreezeCollectionView, dataManager.freezeItemSize.count > 0 {
             let size = NSCoder.cgSize(for: dataManager.freezeItemSize[indexPath.item]);
             return CGSize(width: size.width, height: headerHeight)
@@ -307,7 +307,7 @@ extension DUExcelView {
         }
     }
     
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+    public func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         var targetIndexPath = indexPath
         if collectionView == headFreezeCollectionView {
             
@@ -321,7 +321,7 @@ extension DUExcelView {
         self.delegate?.excelView?(self, didSelectItemAt: targetIndexPath)
     }
     
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+    public func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         if itemInsets != nil {
             return itemInsets!
         }
@@ -332,7 +332,7 @@ extension DUExcelView {
 //MARK: - UISCrollViewDelegate
 extension DUExcelView {
     
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+    public func scrollViewDidScroll(_ scrollView: UIScrollView) {
         if scrollView != contentScrollView {
             contentFreezeCollectionView.contentOffset = scrollView.contentOffset
             contentMoveableCollectionView.contentOffset = scrollView.contentOffset
