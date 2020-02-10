@@ -10,25 +10,22 @@ import UIKit
 
 class AKExcelCollectionViewCell: UICollectionViewCell {
     
-    var horizontalMargin : CGFloat?{
+    var horizontalMargin : CGFloat? {
         didSet{
-         setupFrame()
+            setupFrame()
         }
     }
     var customView : UIView? {
         didSet{
-            
-            if customView != nil {
-            customView?.frame = bounds
-            contentView.insertSubview(customView!, at: 0)
-            textLabel.text = ""
+            if let v = customView {
+                v.frame = bounds
+                contentView.insertSubview(v, at: 0)
+                textLabel.text = ""
             }
         }
     }
-    
     lazy var textLabel : UILabel = {
-       
-        let label = UILabel.init()
+        let label = UILabel()
         label.numberOfLines = 0
         label.textAlignment = .center
         label.backgroundColor = UIColor.clear
@@ -36,11 +33,10 @@ class AKExcelCollectionViewCell: UICollectionViewCell {
     }()
     
     private lazy var separatorLayer : CAShapeLayer = {
-        
-       let lay = CAShapeLayer.init()
-        lay.strokeColor = UIColor.lightGray.cgColor
+        let lay = CAShapeLayer.init()
+        lay.strokeColor = UIColor.white.cgColor
         lay.lineWidth = 0.5
-       return lay
+        return lay
     }()
     
     override init(frame: CGRect) {
@@ -50,6 +46,12 @@ class AKExcelCollectionViewCell: UICollectionViewCell {
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    var contentBackgroundColor: UIColor = UIColor.white {
+        didSet {
+            contentView.backgroundColor = contentBackgroundColor
+        }
     }
 
     func setup() {
@@ -63,9 +65,7 @@ class AKExcelCollectionViewCell: UICollectionViewCell {
     }
     
     func setupFrame() {
-        
         let newFrame = CGRect.init(x: horizontalMargin!, y: 0, width: bounds.size.width - 2*horizontalMargin!, height: bounds.size.height)
-        
         textLabel.frame = newFrame
         
         let path = UIBezierPath.init()
@@ -74,6 +74,7 @@ class AKExcelCollectionViewCell: UICollectionViewCell {
         
         separatorLayer.path = path.cgPath
     }
+    
     override func prepareForReuse() {
         super.prepareForReuse()
         customView?.removeFromSuperview()

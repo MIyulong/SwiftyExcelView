@@ -11,7 +11,6 @@ import UIKit
 class AKExcelDataManager: NSObject {
     
     //MARK: - Properties
-    
     /// excelView
     var excelView : AKExcelView?
     /// AllExcel Data
@@ -37,15 +36,12 @@ class AKExcelDataManager: NSObject {
     
     //MARK: - Private Method
     private func loadData() {
-        
         var arrM = [[String]]()
-        
-        if ((excelView?.headerTitles) != nil) {
-            arrM.append((excelView?.headerTitles)!)
+        if let titles = excelView?.headerTitles {
+            arrM.append(titles)
         }
-        if ((excelView?.contentData) != nil) {
-            for model in (excelView?.contentData)! {
-                
+        if let datas = excelView?.contentData {
+            for model in datas {
                 arrM.append(model.valuesFor(excelView?.properties))
             }
         }
@@ -66,7 +62,6 @@ class AKExcelDataManager: NSObject {
             
             for j in 0 ..< cou {
                 let value = arr[j];
-                
                 if (j < (excelView?.leftFreezeColumn)!) {
                     freezeArray.append(value)
                 } else {
@@ -93,28 +88,22 @@ class AKExcelDataManager: NSObject {
     }
     
     private func caculateWidths() {
-        
         var fItemSize = [String]()
         var sItemSize = [String]()
         
         let col = dataArray?.first?.count
         
         for i in 0..<col! {
-            
             var colW = CGFloat()
             for j in 0 ..< (dataArray?.count)! {
-                
                 let value = dataArray?[j][i]
-                
                 var size = value?.getTextSize(font: (excelView?.contentTextFontSize)!, size: CGSize.init(width: (excelView?.itemMaxWidth)!, height: (excelView?.itemHeight)!))
                 if j == 0 {
                     size = value?.getTextSize(font: (excelView?.headerTextFontSize)!, size: CGSize.init(width: (excelView?.itemMaxWidth)!, height: (excelView?.itemHeight)!))
                 }
                 
                 if ((excelView?.columnWidthSetting) != nil) {
-                    
                     if let setWidth = excelView?.columnWidthSetting?[i] {
-                        
                         size = CGSize.init(width: setWidth, height: (excelView?.itemHeight)!)
                     }
                 }
@@ -127,10 +116,8 @@ class AKExcelDataManager: NSObject {
                 
                 colW = max((excelView?.itemMinWidth)!, min((excelView?.itemMaxWidth)!, colW))
             }
-            // 滑动scroll节点
-            slideItemOffSetX.append(slideWidth)
+            
             if (i < (excelView?.leftFreezeColumn)!) {
-                
                 fItemSize.append(NSStringFromCGSize(CGSize.init(width: colW, height: (excelView?.itemHeight)! - 1)))
                 freezeWidth += colW
                 
@@ -138,13 +125,14 @@ class AKExcelDataManager: NSObject {
                 sItemSize.append(NSStringFromCGSize(CGSize.init(width: colW, height: (excelView?.itemHeight)! - 1)))
                 slideWidth += colW
             }
+            // 滑动scroll节点
+            slideItemOffSetX.append(slideWidth)
         }
         freezeItemSize = fItemSize
         slideItemSize = sItemSize
     }
     
     //MARK: - Public Method
-    
     func caculateData() {
         loadData()
         configData()
@@ -156,37 +144,28 @@ class AKExcelDataManager: NSObject {
 extension String {
     
     func getTextSize(font:UIFont,size:CGSize) -> CGSize {
-        
         let dic = NSDictionary(object: font, forKey: NSAttributedStringKey.font as NSCopying)
-        
         let stringSize = self.boundingRect(with: size, options: .usesLineFragmentOrigin, attributes: dic as? [NSAttributedStringKey : Any] , context:nil).size
-        
         return stringSize
     }
 }
 
-
-extension NSObject
-{
+extension NSObject {
     func propertyNames() -> [String] {
-        
-        return Mirror(reflecting: self).children.flatMap { $0.label }
+        return Mirror(reflecting: self).children.compactMap { $0.label }
     }
     
     func valueFor(_ property:String) -> String? {
-        
         var value : String?
         for case let (label?, anyValue) in Mirror(reflecting:self).children {
             if label.isEqual(property) {
                 value = anyValue as? String
-                //                return anyValue as? String
             }
         }
         return value
     }
     
     func valuesFor(_ properties:[String]?) -> [String] {
-        
         if let pros = properties {
             var arrM = [String]()
             for pro in pros {
@@ -197,10 +176,8 @@ extension NSObject
         
         var values = [String]()
         for case let (_?, anyValue) in Mirror(reflecting:self).children {
-            
             values.append(anyValue as? String ?? "")
         }
         return values
     }
 }
-
