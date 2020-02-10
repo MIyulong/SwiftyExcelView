@@ -131,9 +131,9 @@ class DUExcelView: UIView , UICollectionViewDelegate , UICollectionViewDataSourc
     
     func sizeForItem(item: Int) -> CGSize {
         if item < leftFreezeColumn {
-            return CGSizeFromString(self.dataManager.freezeItemSize[item]);
+            return NSCoder.cgSize(for: self.dataManager.freezeItemSize[item]);
         } else {
-            return CGSizeFromString(self.dataManager.slideItemSize[item - leftFreezeColumn]);
+            return NSCoder.cgSize(for: self.dataManager.slideItemSize[item - leftFreezeColumn]);
         }
     }
     
@@ -148,8 +148,8 @@ class DUExcelView: UIView , UICollectionViewDelegate , UICollectionViewDataSourc
         contentScrollView.addSubview(contentMoveableCollectionView)
         contentScrollView.addSubview(headMovebleCollectionView)
         
-        contentMoveableCollectionView.contentInset = UIEdgeInsetsMake(-1, 0, 0, 0)
-        contentFreezeCollectionView.contentInset = UIEdgeInsetsMake(-1, 0, 0, 0)
+        contentMoveableCollectionView.contentInset = UIEdgeInsets(top: -1, left: 0, bottom: 0, right: 0)
+        contentFreezeCollectionView.contentInset = UIEdgeInsets(top: -1, left: 0, bottom: 0, right: 0)
         
         contentScrollView.layer.addSublayer(veritcalShadow)
     }
@@ -293,15 +293,15 @@ extension DUExcelView {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         if collectionView == headFreezeCollectionView, dataManager.freezeItemSize.count > 0 {
-            let size = CGSizeFromString(dataManager.freezeItemSize[indexPath.item]);
+            let size = NSCoder.cgSize(for: dataManager.freezeItemSize[indexPath.item]);
             return CGSize(width: size.width, height: headerHeight)
         } else if collectionView == headMovebleCollectionView, dataManager.slideItemSize.count > 0 {
-            let size = CGSizeFromString(dataManager.slideItemSize[indexPath.item]);
+            let size = NSCoder.cgSize(for: dataManager.slideItemSize[indexPath.item]);
             return CGSize(width: size.width, height: headerHeight)
         } else if collectionView == contentFreezeCollectionView, dataManager.freezeItemSize.count > 0 {
-            return CGSizeFromString(dataManager.freezeItemSize[indexPath.item]);
+            return NSCoder.cgSize(for: dataManager.freezeItemSize[indexPath.item]);
         } else if dataManager.slideItemSize.count > 0 {
-            return CGSizeFromString(dataManager.slideItemSize[indexPath.item]);
+            return NSCoder.cgSize(for: dataManager.slideItemSize[indexPath.item]);
         } else {
             return CGSize.zero
         }

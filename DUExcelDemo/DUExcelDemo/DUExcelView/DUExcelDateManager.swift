@@ -118,11 +118,11 @@ class AKExcelDataManager: NSObject {
             }
             
             if (i < (excelView?.leftFreezeColumn)!) {
-                fItemSize.append(NSStringFromCGSize(CGSize.init(width: colW, height: (excelView?.itemHeight)! - 1)))
+                fItemSize.append(NSCoder.string(for: CGSize.init(width: colW, height: (excelView?.itemHeight)! - 1)))
                 freezeWidth += colW
                 
             } else {
-                sItemSize.append(NSStringFromCGSize(CGSize.init(width: colW, height: (excelView?.itemHeight)! - 1)))
+                sItemSize.append(NSCoder.string(for: CGSize.init(width: colW, height: (excelView?.itemHeight)! - 1)))
                 slideWidth += colW
             }
             // 滑动scroll节点
@@ -144,8 +144,8 @@ class AKExcelDataManager: NSObject {
 extension String {
     
     func getTextSize(font:UIFont,size:CGSize) -> CGSize {
-        let dic = NSDictionary(object: font, forKey: NSAttributedStringKey.font as NSCopying)
-        let stringSize = self.boundingRect(with: size, options: .usesLineFragmentOrigin, attributes: dic as? [NSAttributedStringKey : Any] , context:nil).size
+        let dic = NSDictionary(object: font, forKey: NSAttributedString.Key.font as NSCopying)
+        let stringSize = self.boundingRect(with: size, options: .usesLineFragmentOrigin, attributes: dic as? [NSAttributedString.Key : Any] , context:nil).size
         return stringSize
     }
 }
