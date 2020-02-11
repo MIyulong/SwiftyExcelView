@@ -68,7 +68,6 @@ public class DUExcelView: UIView , UICollectionViewDelegate , UICollectionViewDa
     public var showNoDataView: Bool = false {
         didSet{
             self.addSubview(alertLabel)
-            alertLabel.center = self.center
         }
     }
     var noDataDescription: String = " - 暂无数据 - " {
@@ -194,7 +193,10 @@ public class DUExcelView: UIView , UICollectionViewDelegate , UICollectionViewDa
             contentMoveableCollectionView.frame = CGRect.init(x: 0, y: 0, width: dataManager.slideWidth, height: height - headerHeight)
         }
         if showNoDataView {
-            self.alertLabel.isHidden = self.dataManager.dataArray?.count == 0 ? false: true
+            self.alertLabel.isHidden = dataManager.dataArray?.count == 0 ? false: true
+            if alertLabel.isHidden {
+                alertLabel.center = self.center
+            }
         }
     }
     

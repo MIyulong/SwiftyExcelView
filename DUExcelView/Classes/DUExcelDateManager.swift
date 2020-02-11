@@ -57,19 +57,22 @@ class AKExcelDataManager: NSObject {
             arrM.append(titles)
             dataArray = arrM
             dataArray! += datas
+        } else {
+            dataArray = []
         }
     }
     
     private func configData() {
+        guard let dataArray = dataArray else { return }
         var freezeData = [[String]]()
         var slideData = [[String]]()
-        let count = dataArray!.count
+        let count = dataArray.count
         
         for i in 0 ..< count {
             var freezeArray = [String]()
             var slideArray = [String]()
             
-            let arr : [String] = dataArray![i]
+            let arr : [String] = dataArray[i]
             let cou = arr.count
             
             for j in 0 ..< cou {
@@ -84,9 +87,9 @@ class AKExcelDataManager: NSObject {
             slideData.append(slideArray)
         }
         
-        if ((excelView?.headerTitles) != nil) {
-            headFreezeData = (dataArray?.first)!
-            headSlideData = (dataArray?.first)!
+        if ((excelView?.headerTitles) != nil), let firstData = dataArray.first {
+            headFreezeData = firstData
+            headSlideData = firstData
             
             let fArray = Array(freezeData[1..<freezeData.count])
             let sArray = Array(slideData[1..<slideData.count])
@@ -100,15 +103,16 @@ class AKExcelDataManager: NSObject {
     }
     
     private func caculateWidths() {
+        guard let dataArray = dataArray else { return }
         var fItemSize = [String]()
         var sItemSize = [String]()
         
-        let col = dataArray?.first?.count
+        let col = dataArray.first?.count ?? 0
         
         // 尝试分配
         var totolColWidth: CGFloat = 0
         var colWidths: [CGFloat] = []
-        dataArray?.first?.enumerated().forEach({ (i, value) in
+        dataArray.first?.enumerated().forEach({ (i, value) in
             var size = value.getTextSize(font: (excelView?.contentTextFontSize)!, size: CGSize.init(width: (excelView?.itemMaxWidth)!, height: (excelView?.itemHeight)!))
             
             if ((excelView?.columnWidthSetting) != nil) {
@@ -129,15 +133,15 @@ class AKExcelDataManager: NSObject {
         }
         
         autoreleasepool {
-            for i in 0..<col! {
+            for i in 0..<col {
                 var colW = CGFloat()
-                for j in 0 ..< (dataArray?.count)! {
-                    let value = dataArray?[j][i]
+                for j in 0 ..< dataArray.count {
+                    let value = dataArray[j][i]
                     var size: CGSize? = .zero
                     if j == 0 {
-                        size = value?.getTextSize(font: (excelView?.headerTextFontSize)!, size: CGSize.init(width: (excelView?.itemMaxWidth)!, height: (excelView?.itemHeight)!))
+                        size = value.getTextSize(font: (excelView?.headerTextFontSize)!, size: CGSize.init(width: (excelView?.itemMaxWidth)!, height: (excelView?.itemHeight)!))
                     } else {
-                        size = value?.getTextSize(font: (excelView?.contentTextFontSize)!, size: CGSize.init(width: (excelView?.itemMaxWidth)!, height: (excelView?.itemHeight)!))
+                        size = value.getTextSize(font: (excelView?.contentTextFontSize)!, size: CGSize.init(width: (excelView?.itemMaxWidth)!, height: (excelView?.itemHeight)!))
                     }
                     
                     let targetWidth = (size?.width)! + 2 * (excelView?.textMargin)!;
