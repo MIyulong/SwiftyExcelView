@@ -10,6 +10,24 @@ import UIKit
 let AKCollectionViewCellIdentifier = "AKCollectionView_Cell"
 let AKCollectionViewHeaderIdentifier = "AKCollectionView_Header"
 
+public typealias ShadowCouple = (color: UIColor, opacity: Float, radius: CGFloat, offset: CGSize)
+
+public typealias DUExcelDressUpOptionsInfo = [DUExcelDressUpOptionsItem]
+let DUExcelDressUpEmptyOptionsInfo = [DUExcelDressUpOptionsItem]()
+
+public enum DUExcelDressUpOptionsItem {
+    // 顶部阴影、设置了才会显示
+    case showTopShadow(couple: ShadowCouple)
+    // 冻结边阴影、设置了才会显示
+    case showFreezeSideShadow(couple: ShadowCouple)
+    // 奇数行背景颜色
+    case oddLine(backgroundColor: UIColor)
+    // 偶数行背景颜色
+    case evenLine(backgroundColor: UIColor)
+    /// content backgroung Color, 设置内容背景颜色后，会自动同步奇偶行背景
+    case content(backgroundColor: UIColor)
+}
+
 @objc public protocol DUExcelViewDelegate: NSObjectProtocol {
     
     @objc optional func excelView(_ excelView: DUExcelView, didSelectItemAt indexPath: IndexPath)
@@ -39,17 +57,6 @@ public class DUExcelView: UIView , UICollectionViewDelegate , UICollectionViewDa
     public var headerTextFontSize: UIFont = UIFont.systemFont(ofSize: 15)
     /// contenTCell TextColor
     public var contentTextColor: UIColor = UIColor.black
-    /// 奇数行背景颜色
-    public var oddLineBackgroundColor: UIColor = UIColor(red: 245/255.0, green: 245/255.0, blue: 249/255.0, alpha: 1)
-    /// 偶数行背景颜色
-    public var evenLineBackgroundColor: UIColor = UIColor.white
-    /// content backgroung Color, 设置内容背景颜色后，会自动同步奇偶行背景
-    public var contentBackgroundColor: UIColor = UIColor.black {
-        didSet {
-            oddLineBackgroundColor = contentBackgroundColor
-            evenLineBackgroundColor = contentBackgroundColor
-        }
-    }
     /// content Text Font
     public var contentTextFontSize: UIFont = UIFont.systemFont(ofSize: 13)
     /// letf freeze column
@@ -70,6 +77,10 @@ public class DUExcelView: UIView , UICollectionViewDelegate , UICollectionViewDa
             self.addSubview(alertLabel)
         }
     }
+    /// 奇数行背景颜色
+    var oddLineBackgroundColor: UIColor = UIColor(red: 245/255.0, green: 245/255.0, blue: 249/255.0, alpha: 1)
+    /// 偶数行背景颜色
+    var evenLineBackgroundColor: UIColor = UIColor.white
     var noDataDescription: String = " - 暂无数据 - " {
         didSet{
             alertLabel.text = noDataDescription
@@ -83,19 +94,39 @@ public class DUExcelView: UIView , UICollectionViewDelegate , UICollectionViewDa
         return alertLabel
     }()
     
-    fileprivate lazy var veritcalShadow: CAShapeLayer = {
-        let s = CAShapeLayer()
-        s.strokeColor = UIColor.lightGray.cgColor;
-        s.shadowColor = UIColor.black.cgColor;
-        s.shadowOffset = CGSize.init(width: 0, height: -3)
-        s.shadowOpacity = 1;
-        return s
-    }()
+    fileprivate var veritcalShadow: CAShapeLayer?
     
     //MARK: - Public Method
     override public init(frame: CGRect) {
         super.init(frame: frame)
         setup()
+    }
+    
+    private var topSideShadow: ShadowCouple?
+    
+    public var options: [DUExcelDressUpOptionsItem] = DUExcelDressUpEmptyOptionsInfo {
+        didSet {
+            options.forEach { (item) in
+                switch item {
+                case let .evenLine(backgroundColor): self.evenLineBackgroundColor = backgroundColor
+                case let .oddLine(backgroundColor): self.oddLineBackgroundColor = backgroundColor
+                case let .showFreezeSideShadow(couple):
+                    let s = CAShapeLayer()
+                    s.strokeColor = UIColor.white.cgColor;
+                    s.shadowColor = couple.color.cgColor;
+                    s.shadowOffset = couple.offset
+                    s.shadowOpacity = couple.opacity;
+                    s.shadowRadius = couple.radius
+                    contentScrollView.layer.addSublayer(s)
+                    self.veritcalShadow = s
+                case let .showTopShadow(couple):
+                    self.topSideShadow = couple
+                case let .content(backgroundColor):
+                    self.evenLineBackgroundColor = backgroundColor
+                    self.oddLineBackgroundColor = backgroundColor
+                }
+            }
+        }
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -144,26 +175,20 @@ public class DUExcelView: UIView , UICollectionViewDelegate , UICollectionViewDa
         
         contentScrollView.addSubview(contentMoveableCollectionView)
         contentScrollView.addSubview(headMovebleCollectionView)
-        
-        contentMoveableCollectionView.contentInset = UIEdgeInsets(top: -1, left: 0, bottom: 0, right: 0)
-        contentFreezeCollectionView.contentInset = UIEdgeInsets(top: -1, left: 0, bottom: 0, right: 0)
-        
-        contentScrollView.layer.addSublayer(veritcalShadow)
     }
     
     fileprivate func showVerticalDivideShadowLayer() {
-        if veritcalShadow.path == nil {
+        if let shadow = veritcalShadow, shadow.path == nil {
             let path = UIBezierPath()
             let heigh = contentScrollView.contentSize.height + headFreezeCollectionView.contentSize.height
             path.move(to: CGPoint.init(x: 0, y:0))
             path.addLine(to: CGPoint.init(x: 0, y: heigh))
-            path.lineWidth = 0.5
-            veritcalShadow.path = path.cgPath
+            shadow.path = path.cgPath
         }
     }
     
     fileprivate func dismissVerticalDivideShadowLayer() {
-        veritcalShadow.path = nil
+        veritcalShadow?.path = nil
     }
     
     fileprivate func setUpFrames() {
@@ -180,9 +205,10 @@ public class DUExcelView: UIView , UICollectionViewDelegate , UICollectionViewDa
             headMovebleCollectionView.frame = CGRect.init(x: 0, y: 0, width: dataManager.slideWidth, height: headerHeight)
             contentMoveableCollectionView.frame = CGRect.init(x: 0, y: headerHeight, width: dataManager.slideWidth, height: height - headerHeight)
             // 添加阴影，此时frame已确定
-            headFreezeCollectionView.addShoadowToBottomSide()
-            headMovebleCollectionView.addShoadowToBottomSide()
-            
+            if let topShadow = topSideShadow {
+                headFreezeCollectionView.addShoadowToBottomSide(color: topShadow.color, opacity: topShadow.opacity, radius: topShadow.radius, offset: topShadow.offset)
+                headMovebleCollectionView.addShoadowToBottomSide(color: topShadow.color, opacity: topShadow.opacity, radius: topShadow.radius, offset: topShadow.offset)
+            }
         } else {
             
             contentFreezeCollectionView.frame = CGRect.init(x: 0, y: 0, width: dataManager.freezeWidth, height: height - headerHeight)
@@ -337,7 +363,7 @@ extension DUExcelView {
         if scrollView != contentScrollView {
             contentFreezeCollectionView.contentOffset = scrollView.contentOffset
             contentMoveableCollectionView.contentOffset = scrollView.contentOffset
-        } else {
+        } else if let veritcalShadow = veritcalShadow {
             
             if (scrollView.contentOffset.x > 0) {
                 showVerticalDivideShadowLayer()
@@ -401,16 +427,16 @@ extension UIView {
     /// - Parameter radius: 阴影半径
     /// - Parameter offsetY: 底部阴影偏移量
     func addShoadowToBottomSide(color: UIColor = UIColor.black,
-                                opacity: Float = 0.5,
+                                opacity: Float = 0.1,
                                 radius: CGFloat = 3,
-                                offset: CGFloat = 3) {
+                                offset: CGSize = CGSize(width: 0, height: 3)) {
         layer.masksToBounds = false
         backgroundColor = UIColor.white
         layer.shadowColor = color.cgColor
         layer.shadowOpacity = opacity
         layer.shadowRadius = radius
-        layer.shadowOffset = CGSize(width: 0, height: offset)
-        let bezierPath2 = UIBezierPath(rect: CGRect(x: 0, y: bounds.height-offset/2, width: bounds.width, height: offset))
+        layer.shadowOffset = offset
+        let bezierPath2 = UIBezierPath(rect: CGRect(x: 0, y: bounds.height-offset.height/2, width: bounds.width, height: offset.height))
         layer.shadowPath = bezierPath2.cgPath
     }
 }
