@@ -1,5 +1,5 @@
 PODS:
-  - DUExcelView (0.0.1)
+  - DUExcelView (0.0.4)
 
 DEPENDENCIES:
   - DUExcelView (from `../`)
@@ -9,7 +9,7 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  DUExcelView: 0787ad9c249557f119155b9953b8b962353da005
+  DUExcelView: e8332a2a1cd8c2dfaa922f99bdd3ec9248e3e92e
 
 PODFILE CHECKSUM: 23aae6f286e6870f28bba2cb76b9fab4fb193677
 
