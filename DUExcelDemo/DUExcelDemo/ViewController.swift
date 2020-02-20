@@ -50,6 +50,9 @@ class ViewController: UIViewController , DUExcelViewDelegate {
     func addExcelView() {
         
         let excelView : DUExcelView = DUExcelView(frame: CGRect(x: 0, y: 20, width: DUScreenWidth, height: DUScreenHeight - 20))
+        let topShadowCouple: ShadowCouple = (color: UIColor(red: 20/255, green: 21/255, blue: 26/255, alpha: 0.1), opacity: 1, radius: 3, offset: CGSize(width: 0, height: 3))
+        let freezeSideShadowCouple: ShadowCouple = (color: UIColor.black, opacity: 1, radius: 3, offset: CGSize(width: 0, height: -3))
+        excelView.options = [.showTopShadow(couple: topShadowCouple), .showFreezeSideShadow(couple: freezeSideShadowCouple)]
         // 自动滚到最近的一列
         excelView.autoScrollToNearItem = true
         // 设置表头背景色
@@ -59,7 +62,7 @@ class ViewController: UIViewController , DUExcelViewDelegate {
         // 设置间隙
         excelView.textMargin = 20
         // 设置左侧冻结栏数
-        excelView.leftFreezeColumn = 0
+        excelView.leftFreezeColumn = 1
         // 设置对应模型里面的属性  按顺序
         //excelView.properties = ["productNo","productName","specification","quantity","note"]
         excelView.delegate = self
